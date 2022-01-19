@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}- FlaskApp</title>
+    <style>
+      .inventory {
+        padding: 10px;
+        margin: 5px;
+        background-color: #f3f3f3
+      }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">FlaskApp</a>
+        <a href="#">About</a>
+    </nav>
+    <hr>
+    <div class="content">
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>
+

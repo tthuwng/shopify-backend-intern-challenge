@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Inventories {% endblock %}</h1>
+    {% for inventory in inventories %}
+        <div class='inventory'>
+            <p>{{ inventory['name'] }}</p>
+            <p>{{ inventory['description'] }}</p>
+            <p>{{ inventory['created'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
