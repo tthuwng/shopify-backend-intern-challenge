@@ -1,13 +1,20 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>{% block title %} Inventories {% endblock %}</h1>
-    {% for inventory in inventories %}
-        <div class='inventory'>
-            <p>{{ inventory['name'] }}</p>
-            <p>{{ inventory['description'] }}</p>
-            <p>{{ inventory['created'] }}</p>
-            <a href="{{ url_for('edit', id=inventory['id']) }}">Edit</a>
-        </div>
-    {% endfor %}
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} Inventories {% endblock %}</h1>
+<a href="{{ url_for('create') }}"><button>Create Inventory</button></a>
+<div class="container">
+  {% for inventory in inventories %}
+  <div class="inventory">
+    <p><b>{{ inventory['name'] }}</b></p>
+    <p>${{ inventory['price'] }}</p>
+    <p>Stock: {{ inventory['stock'] }}</p>
+    <p>Description: {{ inventory['name'] }}</p>
+    <p>
+      <img src={{ url_for('static', filename='uploads/' + inventory['image']) }}
+      class="image" />
+    </p>
+    <p>Created: {{ inventory['created'] }}</p>
+    <a href="{{ url_for('edit', id=inventory['id']) }}">Edit</a>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

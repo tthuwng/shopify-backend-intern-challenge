@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>{% block title %} Add a new Inventory {% endblock %}</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <label for="name">Name</label>
         <br>
         <input type="text" name="name"

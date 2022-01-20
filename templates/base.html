@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>{% block title %} {% endblock %}- FlaskApp</title>
     <style>
+      p {
+        padding: 0;
+        margin: 0;
+      }
       .inventory {
         padding: 10px;
         margin: 5px;
-        background-color: #f3f3f3
+        /* background-color: #f3f3f3; */
+        display: inline-grid;
       }
 
       .alert {
@@ -15,23 +20,27 @@
         margin: 5px;
         color: 'red';
         background-color: #ffd5de;
-      }      
-    </style>
-</head>
-<body>
-    <nav>
-        <a href="{{ url_for('index') }}">FlaskApp</a>
-        <a href="{{ url_for('create') }}">Create</a>
-        <a href="#">About</a>
-    </nav>
-    <hr>
-     <div class="content">
-				{% for message in get_flashed_messages() %}
-					<div class='alert'>{{ message }}</div>
-				{% endfor %}
-        
-        {% block content %} {% endblock %}
-    </div>
-</body>
-</html>
+      }
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+      }
 
+      .image {
+        height: 200px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="{{ url_for('index') }}">Shop</a>
+    </nav>
+    <hr />
+    <div class="content">
+      {% for message in get_flashed_messages() %}
+      <div class="alert">{{ message }}</div>
+      {% endfor %} {% block content %} {% endblock %}
+    </div>
+  </body>
+</html>

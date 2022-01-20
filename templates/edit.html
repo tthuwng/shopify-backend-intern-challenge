@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>{% block name %} Edit "{{ inventory['name'] }}" {% endblock %}</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <label for="name">Name</label>
         <br>
         <input type="text" name="name"
@@ -18,12 +18,14 @@
 
         <label for="stock">Stock</label>
         <br>
-        <input type="text" name="stock" placeholder="Stock" value="{{ request.form['stock'] or inventory['price'] }}">
+        <input type="text" name="stock" placeholder="Stock" value="{{ request.form['stock'] or inventory['stock'] }}">
         <br>
 
         <label for="image">Image</label>
         <br>
-        <input type="file" name="image" value="{{ request.form['image'] or inventory['image']}}">
+        <img src="{{ url_for('static', filename='uploads/' + inventory['image']) }}" style="width: 64px">
+        <br>
+        <input type="file" name="image" value="{{ request.form['image'] }}">
         <br>
         
 
