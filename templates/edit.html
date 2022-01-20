@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block name %} Edit "{{ inventory['name'] }}" {% endblock %}</h1>
+    <form method="post">
+        <label for="name">Name</label>
+        <br>
+        <input type="text" name="name"
+               placeholder="Name"
+               value="{{ request.form['name'] or inventory['name'] }}"></input>
+        <br>
+
+
+        <label for="price">Price</label>
+        <br>
+        <input type="text" placeholder="Price" name="price" value="{{ request.form['price'] or inventory['price']}}">
+        <br>
+
+        <label for="stock">Stock</label>
+        <br>
+        <input type="text" name="stock" placeholder="Stock" value="{{ request.form['stock'] or inventory['price'] }}">
+        <br>
+
+        <label for="image">Image</label>
+        <br>
+        <input type="file" name="image" value="{{ request.form['image'] or inventory['image']}}">
+        <br>
+        
+
+        <label for="description">Description</label>
+        <br>
+        <textarea name="description"
+                  placeholder="Description"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['description'] or inventory['description'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+		
+
+    <hr>
+    <form action="{{ url_for('delete', id=inventory['id']) }}" method="POST">
+        <input type="submit" value="Delete Inventory"
+                onclick="return confirm('Confirm to delete this inventory?')">
+    </form>
+
+
+
+{% endblock %}
