@@ -1,6 +1,8 @@
-Shopify Backend Intern Challenge
+# Shopify Backend Intern Challenge
 
-### [Functionalities](https://docs.google.com/document/d/1z9LZ_kZBUbg-O2MhZVVSqTmvDko5IJWHtuFmIu_Xg1A/edit?usp=sharing):
+## Functionalities:
+
+[Challenge Description](https://docs.google.com/document/d/1z9LZ_kZBUbg-O2MhZVVSqTmvDko5IJWHtuFmIu_Xg1A/edit?usp=sharing)
 
 - Basic CRUD Functionality
   - Create inventory items
@@ -9,7 +11,7 @@ Shopify Backend Intern Challenge
   - View a list of them
 - Additional feature: Allow image uploads AND store image with generated thumbnails
 
-### Dependencies:
+## Dependencies:
 
 1. [Python 3](https://www.python.org/)
 2. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
