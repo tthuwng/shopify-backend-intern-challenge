@@ -1,6 +1,8 @@
 # Shopify Backend Intern Challenge
 
-## Functionalities:
+An inventory tracking web application for a logistics company
+
+## Functionalities
 
 [Challenge Description](https://docs.google.com/document/d/1z9LZ_kZBUbg-O2MhZVVSqTmvDko5IJWHtuFmIu_Xg1A/edit?usp=sharing)
 
@@ -11,7 +13,7 @@
   - View a list of them
 - Additional feature: Allow image uploads AND store image with generated thumbnails
 
-## Dependencies:
+## Dependencies
 
 1. [Python 3](https://www.python.org/)
 2. [Flask](https://flask.palletsprojects.com/en/2.0.x/)
@@ -19,26 +21,20 @@
 
 ## Instructions
 
-1. Clone the repository
-2. Create & activate python virtual environment
-
 ```
+# create & activate python virtual environment
 python3 -m venv venv
-. venv/bin/activate # for macOS/Linux
-venv\Scripts\activate # for Windows
-```
+source venv/bin/activate
 
-3. Install Flask
-
-```
+# install Flask
 pip install Flask
-```
 
-4. Run the server
+# set environment variables
+export FLASK_APP=main
+export FLASK_ENV=development
 
-```
-FLASK_APP=main.py FLASK_ENV=development
+# run server
 flask run
 ```
 
-Local API calls can be made at: http://127.0.0.1:5000/
+Demo can be viewed at: http://127.0.0.1:5000/
